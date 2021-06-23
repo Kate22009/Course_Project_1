@@ -36,11 +36,10 @@ public class Main {
                 Coin usdValue = CoinFactory.getCoinInstance(Coins.USD);
                 assert usdValue != null;
                 double value = usdValue.calculate(input);
-                Result result = new Result(value, "USD to ISL");
                 System.out.println(value);
 
                 //To save results to a list.
-                SaveResults.value = result;
+                SaveResults.value = value;
                 saveToList();
 
             } else {
@@ -54,7 +53,7 @@ public class Main {
                     Result result = new Result(value, "ISL to USD");
                     System.out.println(value);
                     //To save results to a list.
-                    SaveResults.value = result;
+                    SaveResults.value = value;
                     saveToList();
 
                 } else {
@@ -77,7 +76,7 @@ public class Main {
                     // Will print all previous results from results list.
 
                     System.out.println(arrayResults);
-
+                    new SaveResults();
                      fileWriter();
 
                 } else {

@@ -12,4 +12,5 @@ public class Result extends ArrayList<Result> implements Serializable {
        this.value = value;
        this.currency = currency;
     }
-  }
+
+}

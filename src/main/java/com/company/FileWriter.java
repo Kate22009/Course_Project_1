@@ -4,6 +4,8 @@ import java.io.*;
 import java.util.ArrayList;
 import java.io.FileOutputStream;
 
+import static com.company.SaveResults.arrayResults;
+
 
 public class FileWriter {
 
@@ -11,17 +13,17 @@ public class FileWriter {
     }
 //To write conversion results to a file
     public static void fileWriter() {
-        ArrayList<Result> results = SaveResults.arrayResults;
-        String resultString = "";
-        for (int i = 0; i< SaveResults.arrayResults.size(); i++){
-            Double temp = results.get(i).value;
-            resultString += String.valueOf(temp);
-            resultString += " ";
-        }
+        ArrayList<Double> results = arrayResults;
+//        String resultString = "";
+//        for (int i = 0; i< SaveResults.arrayResults.size(); i++){
+//            Double temp = results.get(i).value;
+//            resultString += String.valueOf(temp);
+//            resultString += " ";
+//        }
         try{
             File file = new File("C:\\Users\\Kate\\Desktop\\results2.txt");
             BufferedWriter writer = new BufferedWriter(new java.io.FileWriter(file));
-           writer.write(resultString);
+           writer.write(String.valueOf(arrayResults));
            writer.close();
 
             FileOutputStream outputStream = new FileOutputStream("C:\\Users\\Kate\\Desktop\\results.txt");
